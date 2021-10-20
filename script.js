@@ -32,19 +32,19 @@ const pickCompanyTLD = () => {
 const pickBusinessType = () => {
     const randTypeIndex = Math.floor(Math.random() * businessTypes.length);
     return businessTypes[randTypeIndex]
-}
+};
 
 // Chooses a hyperbolic descriptor for the company.
 const pickBusinessHyperbole = () => {
     const randHyperboleIndex = Math.floor(Math.random() * businessHyperboles.length);
     return businessHyperboles[randHyperboleIndex]
-}
+};
 
 //Chooses an area of business for the company.
 const pickBusinessArea = () => {
     const randAreaIndex = Math.floor(Math.random() * businessAreas.length);
     return businessAreas[randAreaIndex]
-}
+};
 
 // Company template object.
 const companyFactory = {
@@ -72,3 +72,10 @@ const companyFactory = {
             }
         }
 };
+
+const genNewCompany = () => {
+    console.log(companyWords)
+    let company = Object.create(companyFactory);
+    document.getElementById('company-name').innerHTML = company.name;
+    document.getElementById('company-name').innerHTML = company.description;
+}
