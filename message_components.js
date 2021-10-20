@@ -1,5 +1,4 @@
-{
-	"companyWords": [
+const companyWords = [
             "time",
             "way",
             "year",
@@ -982,27 +981,27 @@
             "abuse",
             "limit",
             "championship"
-        ],
-    "companyTLDs": [
+        ];
+const companyTLDs = [
             "ly",
             "ai",
             "io",
             "me",
             "net"
-        ],
-    "businessTypes": [
+        ];
+const businessTypes = [
             "SAAS",
             "AI",
             "artificial intelligence",
             "deep learning",
             "machine learning"
-        ],
-    "businessHyperbole": [
+        ]
+const businessHyperbole = [
         "Revolutionizing",
         "Disrupting",
-        "Modernizing"
-    ],
-"businessAreas": [
+        "M'odernizing"
+    ]
+const businessAreas = [
             "education",
             "higher education",
             "policeing",
@@ -1010,5 +1009,4 @@
             "insurance",
             "wellness",
             "the workplace"
-        ]
-    }
+        ];
