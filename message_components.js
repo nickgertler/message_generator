@@ -1004,7 +1004,7 @@ const businessHyperboles = [
 const businessAreas = [
             "education",
             "higher education",
-            "policeing",
+            "policing",
             "security",
             "insurance",
             "wellness",
