@@ -997,10 +997,18 @@
             "deep learning",
             "machine learning"
         ],
-    "businessAreas": [
+    "businessHyperbole": [
+        "Revolutionizing",
+        "Disrupting",
+        "Modernizing"
+    ],
+"businessAreas": [
             "education",
             "higher education",
-            "police",
-            "security"
+            "policeing",
+            "security",
+            "insurance",
+            "wellness",
+            "the workplace"
         ]
     }
