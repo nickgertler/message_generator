@@ -996,10 +996,10 @@ const businessTypes = [
             "deep learning",
             "machine learning"
         ]
-const businessHyperbole = [
+const businessHyperboles = [
         "Revolutionizing",
         "Disrupting",
-        "M'odernizing"
+        "Modernizing"
     ]
 const businessAreas = [
             "education",
