@@ -1,10 +1,3 @@
-const messageComponents = require('./message_components.json');
-const companyWords = messageComponents.companyWords;
-const companyTLDs = messageComponents.companyTLDs;
-const businessTypes = messageComponents.businessTypes;
-const businessHyperboles = messageComponents.businessHyperbole;
-const businessAreas = messageComponents.businessAreas;
-
 // Function to remove vowels from noun. Used to stylize company names.
 const removeVowels = string => {
     return string.replace(/[aeiou]/g, '');
@@ -74,8 +67,7 @@ const companyFactory = {
 };
 
 const genNewCompany = () => {
-    console.log(companyWords)
     let company = Object.create(companyFactory);
     document.getElementById('company-name').innerHTML = company.name;
-    document.getElementById('company-name').innerHTML = company.description;
+    document.getElementById('company-description').innerHTML = company.description;
 }
