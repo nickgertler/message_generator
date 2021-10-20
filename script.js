@@ -2,6 +2,7 @@ const messageComponents = require('./message_components.json');
 const companyWords = messageComponents.companyWords;
 const companyTLDs = messageComponents.companyTLDs;
 const businessTypes = messageComponents.businessTypes;
+const businessHyperboles = messageComponents.businessHyperbole;
 const businessAreas = messageComponents.businessAreas;
 
 // Function to remove vowels from noun. Used to stylize company names.
@@ -27,13 +28,47 @@ const pickCompanyTLD = () => {
     return companyTLDs[randTLDIndex];
 };
 
-// Factory for making companies.
-function companyFactory() {
-    return {
-        name: "",
-        description: "",
-        genName: function() {
-            this.name = pickCompanyWord() + "." + pickCompanyTLD()
-        }
-    }
+// Chooses a type of business for the company.
+const pickBusinessType = () => {
+    const randTypeIndex = Math.floor(Math.random() * businessTypes.length);
+    return businessTypes[randTypeIndex]
 }
+
+// Chooses a hyperbolic descriptor for the company.
+const pickBusinessHyperbole = () => {
+    const randHyperboleIndex = Math.floor(Math.random() * businessHyperboles.length);
+    return businessHyperboles[randHyperboleIndex]
+}
+
+//Chooses an area of business for the company.
+const pickBusinessArea = () => {
+    const randAreaIndex = Math.floor(Math.random() * businessAreas.length);
+    return businessAreas[randAreaIndex]
+}
+
+// Company template object.
+const companyFactory = {
+        genName: function() {
+            this._name = pickCompanyWord() + "." + pickCompanyTLD()
+        },
+        genDescription: function() {
+            this._description = pickBusinessHyperbole() + " " + pickBusinessArea() + " using " + pickBusinessType() + "."
+        },
+        // Getters used to generate name and description dynamically. On first run will generate new, subsiquent runs will return value.
+        get name() {
+            if (!this._name) {
+                this.genName()
+                return this._name
+            } else {
+                return this._name
+            }
+        },
+        get description() {
+            if (!this._description) {
+                this.genDescription()
+                return this._description
+            } else {
+                return this._description
+            }
+        }
+};
