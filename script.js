@@ -9,15 +9,25 @@ const removeVowels = string => {
     return string.replace(/[aeiou]/g, '');
 };
 
-// Generate a noun to use as base of business name. 1/3 times will return stylized name with vowels removed.
-const genBusinessNoun = () => {
+// Chooses a noun to use as base of business name. 1/3 times will return stylized name with vowels removed.
+const pickCompanyWord = () => {
     const randWordIndex = Math.floor(Math.random() * companyWords.length);
     const randWord = companyWords[randWordIndex];
-    
-    // Random has 3 possible outcomes. Conditional run 33% of the time. 
-    if (Math.floor(Math.random() * 3) == 2) {
+    // Random has 3 possible outcomes. Conditional run 33% of the time, but only if word is longer than 3 letters. 
+    if (Math.floor(Math.random() * 3) == 2 && randWord.length > 3) {
         return removeVowels(randWord)
     } else {
-        return randWord
-    }
+        return randWord;
+    };
 };
+
+// Chooses a TLD to use as company name suffix.
+const pickCompanyTLD = () => {
+    const randTLDIndex = Math.floor(Math.random() * companyTLDs.length);
+    return companyTLDs[randTLDIndex];
+};
+
+// Generates a full company name.
+const genCompanyName = () => {
+    return pickCompanyWord() + "." + pickCompanyTLD()
+}
