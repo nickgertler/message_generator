@@ -27,7 +27,13 @@ const pickCompanyTLD = () => {
     return companyTLDs[randTLDIndex];
 };
 
-// Generates a full company name.
-const genCompanyName = () => {
-    return pickCompanyWord() + "." + pickCompanyTLD()
+// Factory for making companies.
+function companyFactory() {
+    return {
+        name: "",
+        description: "",
+        genName: function() {
+            this.name = pickCompanyWord() + "." + pickCompanyTLD()
+        }
+    }
 }
